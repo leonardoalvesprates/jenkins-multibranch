@@ -3,10 +3,8 @@ pipeline {
   environment {
   }
 
-  agent {
-    label 'master'
-  }
-
+  agent any
+  
   stages {
 
     // ======================================================================main
@@ -30,10 +28,5 @@ pipeline {
       }
     }
 
- 
-  post {
-    always {
-    }
-  }
   }
 }
