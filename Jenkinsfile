@@ -1,32 +1,13 @@
 pipeline {
-
-  environment {
-  }
-
-  agent any
-  
-  stages {
-
-    // ======================================================================main
-    stage("[main] - echo") {
-      when {
-        branch 'main'
-      }
-      steps {
-        sh label: '', script: ''' echo "this is main branch"
-                                  echo'''
-      }
+    agent any
+    stages {
+        stage('test main') {
+            when {
+              branch 'main'
+            }
+            steps {
+               echo "hello" 
+            }
+        }
     }
-
-    stage("[main] - list dir") {
-      when {
-        branch 'main'
-      }
-      steps {
-        sh label: '', script: ''' echo "recursive list directory"
-                                  ls -lR'''
-      }
-    }
-
-  }
 }
