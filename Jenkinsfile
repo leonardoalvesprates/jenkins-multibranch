@@ -1,4 +1,7 @@
 pipeline {
+    environment {
+        MESSAGE = 'hello Hello HELLO'
+    }
     agent any
     stages {
         stage('test main') {
@@ -6,7 +9,7 @@ pipeline {
               branch 'main'
             }
             steps {
-               echo "hello" 
+               echo ${MESSAGE}
             }
         }
     }
