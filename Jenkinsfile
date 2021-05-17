@@ -4,12 +4,12 @@ pipeline {
     }
     agent any
     stages {
-        stage('test main') {
+        stage('echo message') {
             when {
               branch 'main'
             }
             steps {
-               echo ${MESSAGE}
+               echo "${MESSAGE}"
             }
         }
     }
