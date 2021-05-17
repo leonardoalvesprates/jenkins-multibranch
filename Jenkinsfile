@@ -12,5 +12,15 @@ pipeline {
                echo "${MESSAGE}"
             }
         }
+        stage('build docker image') {
+           when {
+               branch 'main'
+           }
+           steps {
+               script {
+                   docker.build(webfirst, " . -f Dockerfile")
+               }
+           }
+        }
     }
 }
